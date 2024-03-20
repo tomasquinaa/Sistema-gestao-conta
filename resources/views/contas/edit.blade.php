@@ -23,13 +23,13 @@
             </div>
         @endif --}}
 
-        {{-- @if ($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger m-3" role="alert">
                 @foreach ($errors->all() as $error)
                     {{ $error }} <br>
                 @endforeach
             </div>
-        @endif --}}
+        @endif
 
         <x-alert />
 

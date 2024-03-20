@@ -27,12 +27,12 @@
                     Swal.fire('Pronto!',"{{ session('success') }}", 'success');
                 });
             </script> --}}
-            {{-- <script>
+            <script>
                 swal("pronto","{{ Session::get('success') }}", 'success',{
                     button:true,
                     button:"OK",
                 });
-            </script> --}}
+            </script>
             
         @endif
 

@@ -53,6 +53,15 @@
                 <a href="{{ url('gerar-pdf-conta?' . request()->getQueryString()) }}" class="btn btn-warning btn-sm">
                     Gerar PDF 
                 </a>
+
+                <a href="{{ url('gerar-csv-conta?' . request()->getQueryString()) }}" class="btn btn-success btn-sm">
+                    Gerar Excel 
+                </a>
+
+                <a href="{{ url('gerar-word-conta?' . request()->getQueryString()) }}" class="btn btn-primary btn-sm">
+                    Gerar Word 
+                </a>
+
             </span>
         </div>
 
@@ -105,7 +114,7 @@
                                     @csrf
                                     @method('delete')
                                     {{-- <button type="submit" class="btn btn-danger btn-sm me-1" onclick="return confirm('Tem certeza que deseja apagar este registro?')">Apagar</button> --}}
-                                    <button type="submit" class="btn btn-danger btn-sm me-1" onclick="confirmarExclusao(event, {{ $conta->id }})">Apagar</button>
+                                    <button type="submit" class="btn btn-danger btn-sm me-1 btnDelete" data-delete-id="{{$conta->id}}">Apagar</button>
                                 </form>
                             </td>
                         </tr>

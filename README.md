@@ -108,3 +108,52 @@ depois de executar o npm sweetalert, vai na pasta public, no ficheiro bootstrap.
 php artisan make:seeder SituacaoContaSeeder
 
 para a execução: php artisan db:seed
+
+## usamos a biblioteca do Select2:
+
+Link: https://select2.org/
+
+Teremos que incluir um JQuery na pesquisa, eis o Link:
+
+utilizamos uma CDN do google: https://developers.google.com/speed/libraries?hl=pt-br#jquery
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+## Como Gerar Excel com Laravel
+
+## como Gerar Word com Laravel
+
+Link da documentação:
+https://github.com/PHPOffice/PHPWord
+
+Instalação da dependencia para gerar word: composer require phpoffice/phpword
+
+## Criar a logica do registro do banco de dados
+
+criamos uma migration com as seguintes configurações:
+
+return new class extends Migration
+{
+/\*\*
+_ Run the migrations.
+_/
+public function up(): void
+{
+Schema::table('contas', function (Blueprint $table) {
+$table->softDeletes()->after('updated_at');
+});
+}
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('contas', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+    }
+
+};
+
+depois dessa configuração fizemos uma migration e verificamos que acresce o campo delete_id na tabela conta.

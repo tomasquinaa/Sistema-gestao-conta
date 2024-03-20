@@ -32,3 +32,9 @@ Route::delete('/destroy-contas/{conta}', [ContaController::class, 'destroy'])->n
 Route::get('/change-situation-conta/{conta}', [ContaController::class, 'changeSituation'])->name('conta.change-situation');
 
 Route::get('/gerar-pdf-conta', [ContaController::class, 'gerarPdf'])->name('conta.gerar-pdf');
+
+// gerar CSV - Excel
+Route::get('/gerar-csv-conta', [ContaController::class, 'gerarCsv'])->name('conta.gerar-csv');
+
+// gerar Word 
+Route::get('/gerar-word-conta', [ContaController::class, 'gerarWord'])->name('conta.gerar-word');
