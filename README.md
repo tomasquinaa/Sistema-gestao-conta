@@ -157,3 +157,7 @@ $table->softDeletes()->after('updated_at');
 };
 
 depois dessa configuração fizemos uma migration e verificamos que acresce o campo delete_id na tabela conta.
+
+## MAIL
+
+php artisan make:mail SendMailContaPagar

@@ -51,3 +51,18 @@ document.querySelectorAll('.btnDelete').forEach(function (button){
     });
 })
 
+// Implementação do reload
+// Receber o seletor btnSendEmail e-mail e percorrer e lista de botões
+document.querySelectorAll('.btnSendEmail').forEach(function (button){
+
+    // Aguardar o clique do usuário no botão enviar email
+    button.addEventListener('click', function (event){
+
+        // Adicionar a classe "disabled" ao botão
+        button.classList.add('disabled');
+
+        // Enviar o spinner para o botão
+        button.innerHTML = '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span role="status">Enviando...</span>'
+    });
+})
+

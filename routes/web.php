@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContaController;
+use App\Http\Controllers\SendEmailContaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,3 +39,7 @@ Route::get('/gerar-csv-conta', [ContaController::class, 'gerarCsv'])->name('cont
 
 // gerar Word 
 Route::get('/gerar-word-conta', [ContaController::class, 'gerarWord'])->name('conta.gerar-word');
+
+// Enviar Email
+
+Route::get('/send-email-pendente-conta', [SendEmailContaController::class, 'sendEmailPendenteConta'])->name('conta.send-email-pendente');

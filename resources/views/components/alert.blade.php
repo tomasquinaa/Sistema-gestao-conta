@@ -12,6 +12,20 @@
     </script>
 @endif
 
+@if (session()->has('error'))
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Swal.fire('Pronto!',"{{ session('success') }}", 'success');
+        });
+    </script> --}}
+    <script>
+        swal("Erro","{{ Session::get('error') }}", 'error',{
+            button:true,
+            button:"OK",
+        });
+    </script>
+@endif
+
 @if ($errors->any())
     @php 
         $mensagem = '';

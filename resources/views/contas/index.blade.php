@@ -50,6 +50,11 @@
                 </a> --}}
                 {{-- {{ dd(request()->getQueryString())}} --}}
 
+                <a href="{{ route('conta.send-email-pendente') }}" class="btn btn-info btn-sm">
+                    Enviar E-mail
+                </a>
+
+
                 <a href="{{ url('gerar-pdf-conta?' . request()->getQueryString()) }}" class="btn btn-warning btn-sm">
                     Gerar PDF 
                 </a>
@@ -62,6 +67,7 @@
                     Gerar Word 
                 </a>
 
+              
             </span>
         </div>
 
